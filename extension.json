@@ -1,0 +1,28 @@
+{
+  "name": "DeltaDB",
+  "author": "Gary Guo",
+  "url": "https://github.com/nbdd0121/MW-DeltaDB",
+  "descriptionmsg": "deltadb_desc",
+  "version": "0.0.1",
+  "license-name": "BSD-2-Clause",
+  "type": "storage",
+  "MessagesDirs": {
+    "DeltaDB": [
+      "i18n"
+    ]
+  },
+  "AutoloadClasses": {
+    "DeltaDB": "includes/DeltaDB.php",
+    "ExternalStoreDeltaDB": "includes/ExternalStoreDeltaDB.php",
+    "DeltaDBHooks": "includes/Hooks.php"
+  },
+  "Hooks": {
+    "RevisionRecordInserted": [
+      "DeltaDBHooks::onRevisionRecordInserted"
+    ]
+  },
+  "config": {
+    "DeltaDBURL": {}
+  },
+  "manifest_version": 1
+}
