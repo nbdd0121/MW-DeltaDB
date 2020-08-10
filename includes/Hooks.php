@@ -23,7 +23,7 @@ class DeltaDBHooks {
 		if ( $schema !== 'tt') throw new MWException('Unknown schema');
 		$textId = intval( $textId );
 
-		$dbr = wfGetDB(DB_SLAVE);
+		$dbr = wfGetDB(DB_REPLICA);
 		$row = $dbr->selectRow(
 			'text',
 			[ 'old_text', 'old_flags' ],

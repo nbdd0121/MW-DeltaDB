@@ -24,7 +24,8 @@ class DeltaDB {
 
 	public static function insert( $location, $data ) {
 		$url = self::apiUrlBase( $location );
-		$request = MWHttpRequest::factory( $url, [
+		// CurlHttpRequest has a bug which doesn't send the body.
+		$request = new PhpHttpRequest( $url, [
 			'method' => 'PUT',
 			'postData' => $data
 		], __METHOD__ );
